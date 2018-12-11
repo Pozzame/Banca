@@ -27,6 +27,9 @@ namespace Banca
             Banca.Add(new ContoPremium(14));
             Banca.Add(new ContoPremium(15));
 
+            ContoIta.Tassa = 2;
+            ContoPremium.Bonus = 2;
+
             foreach (Conto Conto in Banca)
             {
                 Conto.Versa(100);

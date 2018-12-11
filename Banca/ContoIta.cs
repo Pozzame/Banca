@@ -6,19 +6,20 @@ namespace Banca
 {
     class ContoIta : Conto
     {
-        decimal tassa = 2;
+        public static decimal Tassa { get; set; }
+        
         public ContoIta(int ID) : base(ID)
         {
         }
 
         public override bool Ritira(decimal importo)
         {
-            return base.Ritira(importo + (importo / 100 * tassa));
+            return base.Ritira(importo + (importo / 100 * Tassa));
         }
 
         public override void Versa(decimal importo)
         {
-            base.Versa(importo - (importo / 100 * tassa));
+            base.Versa(importo - (importo / 100 * Tassa));
         }
 
         public new string ToString()

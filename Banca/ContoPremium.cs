@@ -6,7 +6,7 @@ namespace Banca
 {
     class ContoPremium : Conto
     {
-        decimal bonus = 2;
+        public static decimal Bonus { get; set; }
 
         public ContoPremium(int ID) : base(ID)
         {
@@ -14,14 +14,13 @@ namespace Banca
 
         public override bool Ritira(decimal importo)
         {
-            return base.Ritira(importo - (importo / 100 * bonus));
+            return base.Ritira(importo - (importo / 100 * Bonus));
         }
 
         public override void Versa(decimal importo)
         {
-            base.Versa(importo + (importo / 100 * bonus));
+            base.Versa(importo + (importo / 100 * Bonus));
         }
-
 
         public new string ToString()
         {
